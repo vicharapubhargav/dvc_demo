@@ -1,15 +1,21 @@
 schema: '2.0'
 stages:
   stage_01:
-    cmd: python stage_01.py
+    cmd: python src/stage_01_load_save.py
     deps:
-    - path: stage_01.py
-      md5: f5586d171267b11311e1043f147f6096
-      size: 82
+    - path: config/config.yaml
+      md5: 952743490d13e0e9fdc89c9df2ec4539
+      size: 207
+    - path: src/stage_01_load_save.py
+      md5: eb41ed206ac2d3fd73ea4931165a1a06
+      size: 1036
+    - path: src/utils/all_utils.py
+      md5: 3129f026d8a55720318f7de3b2046c34
+      size: 345
     outs:
-    - path: artifacts01.txt
-      md5: e3b36234783372b51a955548ccf91cdc
-      size: 8
+    - path: artifacts/raw_local_dir/data.csv
+      md5: 7d814a1bda02145efe703f4e1c01847a
+      size: 93599
   stage_02:
     cmd: python stage_02.py
     deps:

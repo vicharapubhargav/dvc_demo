@@ -32,6 +32,7 @@ def split_and_save(config_path, params_path):
 
     df = pd.read_csv(remote_data_path)
     column = [col.replace(" ", "_") for col in df.columns]
+
     df.columns = column
 
     split_ratio = params["base"]["test_size"]
